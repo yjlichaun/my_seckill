@@ -1,6 +1,48 @@
+server:
+  port: 8888
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/seckill?useUnicode=true&characterEncoding=UTF-8&useSSL=false
     username: root
     password: weijie030826
+  thymeleaf:
+    cache: false
+    enabled: true
+    encoding: UTF-8
+    mode: HTML5
+    prefix: classpath:/templates/
+    suffix: .html
+    servlet:
+      content-type: text/html
+  redis:
+    host: localhost
+    port: 6379
+    connect-timeout: 10
+  web:
+    resources:
+      add-mappings: true
+      static-locations: classpath:/static/
+      chain:
+        cache: true
+        enabled: true
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: admin
+    password: admin
+    virtual-host: /
+    listener:
+      simple:
+        concurrency: 10
+        max-concurrency: 10
+        prefetch: 1
+        auto-startup: true
+        default-requeue-rejected: true
+    template:
+      retry:
+        enabled: true
+        initial-interval: 1000
+        max-attempts: 3
+        max-interval: 10000
+        multiplier: 1.0

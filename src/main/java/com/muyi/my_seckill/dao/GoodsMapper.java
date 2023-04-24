@@ -1,8 +1,11 @@
 package com.muyi.my_seckill.dao;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.muyi.my_seckill.bo.GoodsBo;
 import com.muyi.my_seckill.po.Goods;
 import org.apache.ibatis.annotations.Mapper;
+
+import java.util.List;
 
 /**
  * @author 历川
@@ -12,5 +15,7 @@ import org.apache.ibatis.annotations.Mapper;
  */
 @Mapper
 public interface GoodsMapper extends BaseMapper<Goods> {
+    List<GoodsBo> selectAllGoodes();
 
+    GoodsBo getSeckillGoodsBoByGoodsId(long goodsId);
 }
