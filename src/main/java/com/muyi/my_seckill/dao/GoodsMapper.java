@@ -18,4 +18,6 @@ public interface GoodsMapper extends BaseMapper<Goods> {
     List<GoodsBo> selectAllGoodes();
 
     GoodsBo getSeckillGoodsBoByGoodsId(long goodsId);
+
+    int updateStock(Long goodsId);
 }

@@ -1,4 +1,4 @@
-package cn.hfbin.seckill.annotations;
+package com.muyi.my_seckill.annotations;
 
 import static java.lang.annotation.ElementType.METHOD;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;

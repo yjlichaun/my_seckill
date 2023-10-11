@@ -27,4 +27,9 @@ public class SeckillGoodsServiceImpl implements SeckillGoodsService {
     public GoodsBo getSeckillGoodsBoByGoodsId(long goodsId) {
         return goodsMapper.getSeckillGoodsBoByGoodsId(goodsId);
     }
+
+    @Override
+    public int reduceStock(Long goodsId) {
+        return goodsMapper.updateStock(goodsId);
+    }
 }

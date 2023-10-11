@@ -26,7 +26,9 @@ public class OrderInfo {
     //商品id
 
     private Long goodsId;
+    //地址id
 
+    private Long addrId;
     //商品名称
 
     private String goodsName;
@@ -39,6 +41,9 @@ public class OrderInfo {
 
     private BigDecimal goodsPrice;
 
+    //订单
+
+    private Integer orderChannel;
     //订单状态
 
     private  Integer status;

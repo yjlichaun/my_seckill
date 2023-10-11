@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.muyi.my_seckill.dao.SeckillOrderMapper" >
+  <resultMap id="BaseResultMap" type="com.muyi.my_seckill.po.SeckillOrder" >
+    <constructor >
+      <idArg column="id" jdbcType="BIGINT" javaType="java.lang.Long" />
+      <arg column="user_id" jdbcType="BIGINT" javaType="java.lang.Long" />
+      <arg column="order_id" jdbcType="BIGINT" javaType="java.lang.Long" />
+      <arg column="goods_id" jdbcType="BIGINT" javaType="java.lang.Long" />
+    </constructor>
+  </resultMap>
+
+  <sql id="Base_Column_List" >
+    id, user_id, order_id, goods_id
+  </sql>
+  <select id="selectByUserIdAndGoodId" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
+    from seckill_order
+    where user_id = #{userId,jdbcType=BIGINT} and goods_id = #{goodsId,jdbcType=BIGINT}
+  </select>
+</mapper>
